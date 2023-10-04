@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap');
+
+/* Color Pallete */
+:root {
+    --background : #FFF5E0;
+    --background-2 : #f1ae61;
+    --pallete-2 : #f9bf7d;
+    --pallete-3 : #C70039;
+    --pallete-4 : #141E46;
+    --pallete-5 : #FAF2D3;
+    --pallete-6 : #ECB760;
+    --pallete-background-dark  : #526D82;
+    --pallete-3-dark : #DDE6ED;
+    --teks_3 : #9DB1BE;
+    --back-1 : #1e1e1e;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: var(--background);
+}
+
+/* Navbar */
+.nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--background-2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    font-size: 25px;
+    text-decoration: none;
+    color: var(--pallete-3);
+    font-weight: 800;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.nav li {
+    float: left;
+}
+
+.nav li a {
+    display: block;
+    color: var(--pallete-3);
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px 25px;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    color: var(--pallete-4);
+}
+
+/* Home / Landing Page */
+
+.landing-page {
+    height: 100vh;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    margin-bottom: 6em;
+}
+
+.home h1 {
+    font-size: 40px;
+    font-weight: 700;
+    text-shadow: 2px 1px var(--pallete-4);
+    color: var(--pallete-3);
+    border-bottom: var(--pallete-3) solid 5px;
+}
+
+.home a {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 30px;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--pallete-5);
+    background-color: var(--pallete-6);
+    border-radius: 10px;
+}
+
+.home a:hover {
+    background-color: var(--pallete-3);
+    color: var(--pallete-5);
+}
+
+/* About Tinkery */
+
+.about {
+    background-color: var(--pallete-2);
+    height: 100vh;
+}
+
+.about-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.about-title h1 {
+    color: var(--pallete-3);
+    text-shadow: 2px 1px var(--pallete-4);
+    font-size: 50px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6em;
+}
+
+.about-content p {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 25px;
+    margin: 20px 10px 0px 20px;
+    max-width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: justify;
+}
+
+.about-content img {
+    width: 300px;
+    padding-top: 40px   ;
+}
+
+/* Pop Up Showdown */
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.popup {
+    position: relative;
+    background-color: var(--pallete-5);
+    padding: 20px;
+    border: 1px solid var(--background-2);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: zoomIn 1s ease forwards;
+}
+
+.ok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pallete-2);
+    color: #C70039;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px 130px 0px 130px;
+    padding: 5px;
+    text-decoration: none;
+    border: 1px solid var(--background-2);
+    border-radius: 10px;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Footer Styles */
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container p {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.follow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 35px;  
+}
+
+.follow a {
+    color: var(--pallete-3);
+    margin-bottom: 10px;
+}
+
+/* DarkMode Toggler */
+
+.darkmode-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 105px;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label {
+    background-color: #fff;
+    width: 40px;
+    height: 18px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    margin-top: 17px;
+    margin-right: 20px;
+}
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+    background-color: var(--pallete-2);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    right: 4px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+    transform: translateX(22px);
+}
+
+/* Dark mode */
+body.dark {
+    background-color: #292c35;
+}
+
+main.dark .home {
+    background-color: #292c35;
+}
+
+main.dark .home h1{
+    color: var(--teks_3);
+    border-bottom: var(--teks_3) solid 5px;
+}
+
+main.dark .home a {
+    color: var(--back-1);
+    background-color: var(--pallete-background-dark);
+}
+
+main.dark .home a:hover {
+    color: var(--teks_3);
+    background-color: var(--back-1);
+}
+
+main.dark .about {
+    background-color: var(--pallete-background-dark);
+}
+
+main.dark .about-title h1{
+    background-color: var(--pallete-background-dark);
+    color: var(--pallete-3-dark);
+}
+
+main.dark .about-content {
+    background-color: var(--pallete-background-dark);
+    color: var(--pallete-3-dark);
+}
+
+main.dark .popup {
+    color: var(--pallete-background-dark);
+    background-color: var(--pallete-3-dark);
+    border: 1px solid var(--pallete-4)
+}
+
+main.dark .ok {
+    color: var(--teks_3);
+    background-color: var(--pallete-background-dark);
+    border: 1px solid var(--pallete-4)
+}
+
+footer.dark .footer-container {
+    color: var(--teks_3);
+}
+
+footer.dark .follow a{
+    color: var(--teks_3);
+}
+
+header.dark .nav {
+    background-color: #1e1e1e;
+}
+
+header.dark .nav a {
+    color: var(--teks_3);
+}
+
+header.dark .checkbox-label {
+    background-color: var(--pallete-background-dark);
+}
+
+header.dark .checkbox-label .ball {
+    background-color: var(--teks_3);
+}
+
+body.dark .about .about-content {
+    background-color: var();
+}
