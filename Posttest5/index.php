@@ -1,0 +1,114 @@
+<?php
+    session_start();
+    $navText = "Login"; // Default text
+
+    if(isset($_SESSION['username'])){
+        $navText = $_SESSION['username'];
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./assets/Icon_1.png">
+    <script src="./script/jquery.js"></script>
+    <title>Tinkery's</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="nav">
+            <a href="#" class="logo">Tinkery</a>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" id="catalog-link">Catalog</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" id="contact-link">Contact</a></li>
+                <?php
+                 if (isset($_SESSION['username'])) {
+                        echo "<li class='nav-item'><a href='./pages/data.php' class='nav-link' id='username'>$navText</a></li>";
+                        echo "<li class='nav-item'><a href='./pages/logout.php' class='nav-link' id='#'>Logout</a></li>";
+                    }
+                    else{
+                        echo "<li class='nav-item'><a href='./pages/dashboard_login.php' class='nav-link' id='#'>$navText</a></li>";
+                    }
+                ?>
+            </ul>
+
+            <!-- Dark Mode Toggler -->
+            <div>
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="checkbox-label">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                  <span class="ball"></span>
+                </label>
+              </div>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <!-- home -->
+        <div class="landing-page">
+            <section class="home" id="home">
+                <img src="./assets/Tinkery_1.png" alt="" id="logo">
+                <h1>Selamat Datang di Tinkery</h1>
+                <a href="#about">Tinkery For Us</a>
+            </section>
+        </div>
+
+        <!-- About -->
+        <div class="about">
+            <section class="about-title" id="about">
+                <h1>About us</h1>
+            </section>
+
+            <section class="about-content">
+                <p>
+                    Tinkery adalah Toko Roti yang menyediakan berbagai macam Jenis
+                    Roti yang berkualitas dan enak. Roti yang ada pada Tinkery sendiri
+                    merupakan Home Made yang dibuat oleh Resep Rahasia dari kami yang
+                    terjamin akan Kelembutan dan Rasanya yang enak, untuk Urusan Gizi
+                    kami pun sudah perhitungkan sehingga Roti yang kami jual pun
+                    sangat sehat untuk dikonsumsi. dan tak lupa harga yang kami
+                    tawarkan pun sangat terjangkau untuk semua kalangan.
+                </p>
+                <img src="./assets/bread_1_1.png" alt="">
+            </section>  
+        </div>
+
+        <!-- Pop Up -->
+        <div class="popup-container" id="popup-container">
+            <div id="popup" class="popup">
+                <h2>Contact Us</h2>
+                <p>Phone: 123-456-789</p>
+                <p>Email: tinkery@temp.com</p>
+                <p>Address: Z-Index Street, Samarinda, Indonesia</p>
+                <!-- <a href="#" class="ok" id="contact-link" onclick="hidePopup()">Kembali</a> -->
+                <button onclick="hidePopup()" class="ok">Close</button>
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>Copyright &copy; Tinci Bakery</p>
+        </div>
+        <div class="follow">    
+            <a href=""><i class='bx bxl-instagram'></i></a>
+            <a href=""><i class='bx bxl-twitter' ></i></i></a>
+            <a href=""><i class='bx bxl-linkedin' ></i></a>
+        </div>  
+    </footer>
+
+    <script src="./script/main.js"></script>
+</body>
+</html>
