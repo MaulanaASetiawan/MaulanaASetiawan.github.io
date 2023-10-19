@@ -53,7 +53,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <form action="./update.php?id=<?php echo $roti['id'] ?>" method="POST">
                                         <input type="text" id="bread-name" name="nama_roti" placeholder="Nama Roti" required>
                                         <input type="text" id="bread-price" name="harga_roti" placeholder="Harga Roti" required>
-                                        <input type="text" id="bread-price" name="stok_roti" placeholder="Stok Roti" required>
+                                        <input type="number" id="bread-price" name="stok_roti" placeholder="Stok Roti" required>
                                         <input type="text" id="bread-price" name="desc_roti" placeholder="Deskripsi Roti" required>
                                         <input type="submit" value="Simpan" name="update" id="simpan">
                                         <button id="close-popupEdit<?php echo $roti['id'] ?>">Tutup</button>
@@ -67,13 +67,14 @@ while ($row = mysqli_fetch_assoc($result)) {
         </table>
         <div class="popup-container">
             <button class="add-button" id="show-popup">Tambah</button>
+            <a href="./logout.php" style="text-decoration: none;"><button class="add-button" id="show-popup">Logout</button></a>
             <div class="popup" id="popup">
                 <div class="popup-content">
                     <h3>Add Data</h3>
                     <form action="./create.php" method="POST">
                         <input type="text" id="bread-name" name="nama_roti" placeholder="Nama Roti" required>
                         <input type="text" id="bread-price" name="harga_roti" placeholder="Harga Roti" required>
-                        <input type="text" id="bread-price" name="stok_roti" placeholder="Stok Roti" required>
+                        <input type="number" id="bread-price" name="stok_roti" placeholder="Stok Roti" required>
                         <input type="text" id="bread-price" name="desc_roti" placeholder="Deskripsi Roti" required>
                         <input type="submit" value="Simpan" name="add" id="simpan">
                         <button id="close-popup">Tutup</button>

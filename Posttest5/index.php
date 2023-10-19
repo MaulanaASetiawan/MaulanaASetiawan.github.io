@@ -31,7 +31,7 @@
                 <li class="nav-item"><a href="#" class="nav-link" id="contact-link">Contact</a></li>
                 <?php
                  if (isset($_SESSION['username'])) {
-                        echo "<li class='nav-item'><a href='./pages/data.php' class='nav-link' id='username'>$navText</a></li>";
+                        echo "<li class='nav-item'><a href='#' class='nav-link' id='username'>$navText</a></li>";
                         echo "<li class='nav-item'><a href='./pages/logout.php' class='nav-link' id='#'>Logout</a></li>";
                     }
                     else{
