@@ -1,0 +1,130 @@
+.catalog-title h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    color: var(--pallete-3);
+    text-shadow: 2px 1px var(--pallete-4);
+    font-size: 50px;
+}
+
+.catalog-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-evenly;
+    margin: 100px 0;    
+}
+
+a
+{
+    text-decoration: none;
+}
+.product-card {
+    width: 300px;
+    margin: 5px;
+    position: relative;
+    box-shadow: 0 2px 7px #dfdfdf;
+    background: #fafafa;
+}
+
+/* Menambahkan jarak antar katalog */
+.product-card + .product-card {
+    margin-left: 5px;
+}
+
+/* Memperbaiki posisi badge */
+.badge {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    background: red;
+    color: #fff;
+    padding: 3px 10px;
+}
+
+/* Mengatur lebar dan tinggi gambar produk */
+.product-tumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+.product-tumb img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Memperbaiki padding dan margin keterangan produk */
+.product-details {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.product-details h4 a {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #363636;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.product-details h4 a:hover {
+    color: #fbb72c;
+}
+
+.product-details p {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 10px;
+    color: #999;
+}
+
+/* Memperbaiki tampilan harga dan tautan */
+.product-bottom-details {
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #fbb72c;
+    font-weight: 600;
+}
+
+.product-price small {
+    font-size: 70%;
+    font-weight: 400;
+    text-decoration: line-through;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Memperbaiki tampilan tautan */
+.product-links {
+    text-align: right;
+}
+
+.product-links a {
+    display: inline-block;
+    margin-left: 5px;
+    color: #e1e1e1;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.product-links a:hover {
+    color: #fbb72c;
+}
+
+main.dark .catalog-title h1{
+    background-color: var(#292c35);
+    color: var(--teks_3);
+}
